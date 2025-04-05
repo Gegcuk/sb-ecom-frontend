@@ -5,7 +5,10 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
+import { Divider } from "@mui/material";
 import { useState } from "react";
+import Status from "./Status";
+import { MdClose, MdDone } from "react-icons/md";
 
 function ProductViewModal({ open, setOpen, product, isAvailable }) {
   const {
@@ -63,9 +66,27 @@ function ProductViewModal({ open, setOpen, product, isAvailable }) {
                       </span>
                     </div>
                   )}
+
+                  {isAvailable ? (
+                        <Status
+                        text="In-Stock"
+                        icon={MdDone}
+                        bg="bg-teal-200"
+                        color="text-teal-900"
+                        />
+                  ) : (<Status
+                        text="Out-Of-Stock"
+                        icon={MdClose}
+                        bg="bg-rose-200"
+                        color="text-rose-700"
+                        />)}
                 </div>
               </div>
             </div>
+
+            <Divider/>
+
+            <div className="text-sm">{description}</div>
 
             <div className="flex gap-4">
               <button
