@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import ProductViewModal from "./ProductViewModel";
 
 const ProductCard = ({
   productId,
@@ -92,6 +93,11 @@ const ProductCard = ({
           </button>
         </div>
       </div>
+      <ProductViewModal 
+      open={openProductViewModel}
+      setOpen={setOpenProductViewModel}
+      product={selectedViewProduct}
+      isAvailable={isAvailable}/>
     </div>
   );
 };
