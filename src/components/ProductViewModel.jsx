@@ -88,7 +88,7 @@ function ProductViewModal({ open, setOpen, product, isAvailable }) {
 
             <div className="text-sm">{description}</div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center">
               <button
                 className="bg-blue-500 rounded-lg px-3 py-1 text-white"
                 onClick={() => setOpen(false)}
