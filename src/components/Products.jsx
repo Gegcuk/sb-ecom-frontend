@@ -1,42 +1,16 @@
 import { FaExclamationTriangle } from "react-icons/fa";
 import ProductCard from "./ProductCard";
+import { useDispatch, useSelector } from "react-redux";
 
 const Products = () => {
-  const products = [
-    {
-      productId: 652,
-      productName: "Iphone XS Max",
-      image: "https://placehold.co/600x400",
-      description: "Smartphone from the US company named APPLE. Perfect match if you want be noticed",
-      quantity: 2,
-      price: 1450.0,
-      discount: 10.0,
-      specialPrice: 1305.0,
-    },
-    {
-      productId: 654,
-      productName: "MacBook Air M2",
-      image: "https://placehold.co/600x400",
-      description: "Laptop from the US company named APPLE. Perfect match if you want be noticed",
-      quantity: 1,
-      price: 2550.0,
-      discount: 20.0,
-      specialPrice: 2040.0,
-    },
-    {
-      productId: 656,
-      productName: "Another Iphone XS Max",
-      image: "https://placehold.co/600x400",
-      description: "Another smartphone from the US company named APPLE. Perfect match if you want be noticed",
-      quantity: 0,
-      price: 1450.0,
-      discount: 0,
-      specialPrice: 0,
-    },
-  ];
+
 
   const isLoading = false;
   const errorMessage = "";
+  const {products} = useSelector(
+    (state) => state.products
+  )
+  const dispatch = useDispatch();
 
   return (
     <div className="lg:px-14 sm:px-8 px-4 py-14 2xl:w-[90%] 2xl:mx-auto">
