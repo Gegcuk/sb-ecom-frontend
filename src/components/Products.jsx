@@ -2,16 +2,18 @@ import { FaExclamationTriangle } from "react-icons/fa";
 import ProductCard from "./ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import {fetchProducts} from "../store/actions";
+import { fetchProducts } from "../store/actions";
 
 const Products = () => {
-  const isLoading = false;
-  const errorMessage = "";
+  const {isLoading, errorMessage} = useSelector(
+    (state) => state.errors,
+  );
+
   const { products } = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
   useEffect(() => {
-      dispatch(fetchProducts())
+    dispatch(fetchProducts());
   }, [dispatch]);
 
   return (
